@@ -14,6 +14,13 @@ database.connect();
 //Routes Ver 1
 routeAPI(app);
 
+// parse application/json
+app.use(bodyParser.json());
+
+//config req.body
+app.use(express.json()); // for json
+app.use(express.urlencoded({ extended: true })); // for form data
+
 // kết nối frontEnd
 app.use(cors());
 
